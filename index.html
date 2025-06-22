@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FashionKart</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icon.png" />
+</head>
+<body>
+  <header>
+    <h1>🛍️ FashionKart</h1>
+    <p>Trendy styles for every mood</p>
+  </header>
+
+  <nav class="category-nav">
+    <button onclick="showCategory('kurti')">👗 Kurti</button>
+    <button onclick="showCategory('tops')">👚 Tops</button>
+    <button onclick="showCategory('shirts')">👕 Shirts</button>
+    <button onclick="showCategory('pants')">👖 Pants</button>
+    <button onclick="showCategory('shoes')">👟 Shoes</button>
+  </nav>
+
+  <main id="product-list"></main>
+
+  <footer>
+    <p>🛒 Cart: <span id="cart-count">0</span> item(s)</p>
+    <button onclick="simulateNotification()">🔔 Notify Me</button>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</body>
+</html>
